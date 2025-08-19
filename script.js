@@ -174,11 +174,11 @@ window.addEventListener('load', () => {
 });
 
 // Play the song after the page loads
-    // window.addEventListener('load', () => {
-    //     song.play();
-    //     ctrlIcon.classList.add('fa-pause');
-    //     ctrlIcon.classList.remove('fa-play');
-    // });
+    window.addEventListener('load', () => {
+        song.play();
+        ctrlIcon.classList.add('fa-pause');
+        ctrlIcon.classList.remove('fa-play');
+    });
 
 function loadSong() {
     let currentSong = playlist[currentSongIndex];

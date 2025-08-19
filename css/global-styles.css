@@ -305,12 +305,78 @@ Padding & Margin System
     }
   }
 
+
   @media screen and (max-width: 768px) {
     .custom-width {
       width: 100%;
     }
+
+    #about {
+      min-height: 60vh;
+    }
+
+
   }
 
+  /* Social buttons: center icon and set default (desktop/tablet) size */
+.social-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1rem; /* tetap terasa besar di tablet/PC */
+  transition: padding .15s, transform .15s;
+}
+
+/* target svg di dalam tombol */
+.social-btn svg{
+  width: 64px;
+  height: 64px;
+  transition: width .15s, height .15s;
+}
+
+/* Mobile: kecilkan tombol dan ikon (<= 576px) */
+@media (max-width: 576px){
+  .social-btn{
+    padding: 0.25rem 0.4rem; /* lebih compact */
+    border-radius: 8px;
+  }
+  .social-btn svg{
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* Optional: medium devices (tablet) tetap besar — bisa disesuaikan */
+@media (min-width: 577px) and (max-width: 991px){
+  .social-btn{
+    padding: 0.6rem 0.9rem;
+  }
+  .social-btn svg{
+    width: 56px;
+    height: 56px;
+  }
+}
+
+  @media screen and (max-width: 480px) {
+    #about {
+      min-height: 100vh;
+    }
+    .copy-wallet {
+      width: 100%;
+      padding: 1em;
+      border-radius: 8px;
+      background-color: rgba(240,248,255, 0.4);
+      border: 1px solid #2e1212;
+    }
+    .copy-wallet p {
+      margin: 0;
+      font-size: 0.7rem;
+      color: var(--preset--color--text-primary);
+      font-weight: 500; 
+   }
+
+  }
+  
   /* MOBILE */
   @media screen and (max-width: 768px) {
     #title {
