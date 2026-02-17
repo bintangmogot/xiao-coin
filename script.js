@@ -144,15 +144,13 @@ let currentSongIndex = 0; // Index of the current song in the playlist
 
 
 const playlist = [
-    { title: 'AIMORAIMO - Tuki.', source: '/audio/tuki.『アイモライモ』Official Music Video.mp3', image: '/Images/aimoraimo-yorushika.jpg' },
+    { title: 'AIMORAIMO - Tuki.', source: '/Audio/tuki.『アイモライモ』Official Music Video.mp3', image: '/Images/aimoraimo-yorushika.jpg' },
 
-    { title: 'HARU - Yorushika', source: '/Audio/ヨルシカ - 晴る（OFFICIAL VIDEO）.mp3', image: '/images/haru-yorushika.png' },
+    { title: 'HARU - Yorushika', source: '/Audio/ヨルシカ - 晴る（OFFICIAL VIDEO）.mp3', image: '/Images/haru-yorushika.png' },
 
     { title: 'SEESAW - Tuki', source: '/Audio/tuki.『シーソー』Official Music Video.mp3', image: '/Images/seesaw-tuki.webp' },
 
     { title: 'GHOST IN A FLOWER - Yorushika', source: '/Audio/ヨルシカ - 花に亡霊（OFFICIAL VIDEO）.mp3', image: '/Images/hana ni bourei-yorushika.jpg' },
-
-    // Add more songs to your playlist
 
 ];
 
@@ -173,12 +171,6 @@ window.addEventListener('load', () => {
     });
 });
 
-// Play the song after the page loads
-    window.addEventListener('load', () => {
-        song.play();
-        ctrlIcon.classList.add('fa-pause');
-        ctrlIcon.classList.remove('fa-play');
-    });
 
 function loadSong() {
     let currentSong = playlist[currentSongIndex];
