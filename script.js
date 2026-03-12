@@ -1,13 +1,25 @@
   //  =====CHART DONUT DYNAMIC=====
   const ctx = document.getElementById('myDonutChart').getContext('2d');
   const data = {
-    labels: ['Marketing (70%)', 'Liquidity (10%)', 'LP Burnt (20%)'],
+    labels: [
+      'Ecosystem (30%)', 
+      'Airdrop (25%)', 
+      'Contributors (15%)', 
+      'Private Sale (12%)', 
+      'Community Presale (11%)', 
+      'Advisory (3%)', 
+      'Exchange (4%)'
+    ],
     datasets: [{
-      data: [70, 10, 20],
+      data: [30, 25, 15, 12, 11, 3, 4],
       backgroundColor: [
-        'rgba(255, 179, 186, 0.8)', // pastel pink
-        'rgba(255, 223, 186, 0.8)', // pastel orange
-        'rgba(186, 255, 201, 0.8)'  // pastel green
+        '#4fd1c5', // Ecosystem
+        '#f6ad55', // Airdrop
+        '#68d391', // Contributors
+        '#ed64a6', // Private Sale
+        '#ecc94b', // Community Presale
+        '#9f7aea', // Advisory
+        '#ed8936'  // Exchange
       ],
       borderWidth: 2,
       borderColor: '#fff',
@@ -88,14 +100,34 @@
   //  =====LOADING PAGE DYNAMIC=====
    // Wait for the complete page to load
     window.addEventListener("load", function() {
-        // Ensure loader is visible for at least 3 seconds
+        // Ensure loader is visible for at least 1.5 seconds
         setTimeout(function() {
             // Hide the loader
             document.getElementById("loader").style.display = "none";
-            // Display the main content
-            document.getElementById("content").style.display = "block";
+            
+            // Show the entry overlay instead of content directly
+            const entryOverlay = document.getElementById("entry-overlay");
+            if (entryOverlay) {
+                entryOverlay.style.display = "flex";
+            } else {
+                // Fallback just in case
+                document.getElementById("content").style.display = "block";
+            }
         }, 1500);
     });
+
+    const enterBtn = document.getElementById('enter-btn');
+    if (enterBtn) {
+        enterBtn.addEventListener('click', function() {
+            const overlay = document.getElementById('entry-overlay');
+            overlay.style.opacity = '0';
+            setTimeout(() => {
+                overlay.style.display = 'none';
+                document.getElementById("content").style.display = "block";
+                tryPlay(); // Autoplay now guaranteed to work!
+            }, 500);
+        });
+    }
 
         // Scroll indicator animation
         const scrollIndicator = document.querySelector('.scroll-indicator');
@@ -144,13 +176,13 @@ let currentSongIndex = 0; // Index of the current song in the playlist
 
 
 const playlist = [
-    { title: 'AIMORAIMO - Tuki.', source: '/Audio/tuki.『アイモライモ』Official Music Video.mp3', image: '/Images/aimoraimo-yorushika.jpg' },
+    { title: 'AIMORAIMO - Tuki.', source: 'Audio/tuki.『アイモライモ』Official Music Video.mp3', image: 'Images/aimoraimo-yorushika.jpg' },
 
-    { title: 'HARU - Yorushika', source: '/Audio/ヨルシカ - 晴る（OFFICIAL VIDEO）.mp3', image: '/Images/haru-yorushika.png' },
+    { title: 'HARU - Yorushika', source: 'Audio/ヨルシカ - 晴る（OFFICIAL VIDEO）.mp3', image: 'Images/haru-yorushika.png' },
 
-    { title: 'SEESAW - Tuki', source: '/Audio/tuki.『シーソー』Official Music Video.mp3', image: '/Images/seesaw-tuki.webp' },
+    { title: 'SEESAW - Tuki', source: 'Audio/tuki.『シーソー』Official Music Video.mp3', image: 'Images/seesaw-tuki.webp' },
 
-    { title: 'GHOST IN A FLOWER - Yorushika', source: '/Audio/ヨルシカ - 花に亡霊（OFFICIAL VIDEO）.mp3', image: '/Images/hana ni bourei-yorushika.jpg' },
+    { title: 'GHOST IN A FLOWER - Yorushika', source: 'Audio/ヨルシカ - 花に亡霊（OFFICIAL VIDEO）.mp3', image: 'Images/hana ni bourei-yorushika.jpg' },
 
     // Add more songs to your playlist
 
@@ -163,15 +195,29 @@ song.onloadedmetadata = function () {
     progress.max = song.duration;
     progress.value = song.currentTime;
 }
-// // Play the song after the page loads
-window.addEventListener('load', () => {
+
+// Fixed Autoplay Logic
+function tryPlay() {
     song.play().then(() => {
         ctrlIcon.classList.add('fa-pause');
         ctrlIcon.classList.remove('fa-play');
+        // Once successfully playing, we can remove the interaction listeners
+        removeInteractionListeners();
     }).catch((error) => {
-        console.error('Autoplay failed:', error);
+        console.log("Autoplay blocked. Waiting for user interaction...");
     });
-});
+}
+
+function removeInteractionListeners() {
+    window.removeEventListener('click', tryPlay);
+    window.removeEventListener('touchstart', tryPlay);
+    window.removeEventListener('scroll', tryPlay);
+}
+
+// // Play the song is now handled by the Enter Bambooville button
+// window.addEventListener('load', () => {
+//    // logic moved up to enter-btn click
+// });
 
 function loadSong() {
     let currentSong = playlist[currentSongIndex];

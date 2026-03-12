@@ -35,6 +35,15 @@
   <img src="files/XIAO PFP 1.png" alt="tryxdd" class="logo">
 </div>
 
+<!-- Entry Overlay -->
+<div id="entry-overlay" style="position:fixed;top:0;left:0;width:100vw;height:100vh;background:#FBE2D3;z-index:9998;display:none;align-items:center;justify-content:center;flex-direction:column;transition:opacity 0.5s ease;font-family:montserrat;">
+  <div style="position:relative;display:flex;justify-content:center;align-items:center;margin-bottom:40px;">
+      <div style="position:absolute;width:200px;height:200px;border-radius:50%;"></div>
+      <img src="files/XIAO PFP 1.png" alt="XIAO Logo" style="width:180px;border-radius:50%;box-shadow:0 0 5px rgba(0,0,0,.3);z-index:2;position:relative;">
+  </div>
+  <button id="enter-btn" class="btn-secondary" style="font-size:1.5rem; cursor:pointer; transition: transform 0.2s;">Enter Bambooville</button>
+</div>
+
 <div id="content">
   <!-- navbar -->
       <nav class="nav-container">
@@ -57,7 +66,7 @@
     <video src="files/panda.mp4" autoplay loop muted ></video>
     <div class="d-flex flex-column container-title">
       <h2 id="title">$XIAO</h2> 
-      <h5 id="subheading-h5">Are You Ready to Take Over?</h5>
+      <h5 id="subheading-h5">The Next Big Meme on Solana</h5>
     </div>
     <!-- Button Call to Action -->
     <div class="container mt-3" style="position: absolute; top: 70%; left: 8%;">
@@ -74,23 +83,23 @@
         </div>
         <div class="d-flex mb-3 mt-3 gap-2">
                <div>
-                  <button class="btn-primary px-3 py-2 rounded-2 bg-secondary">
+                  <button class="btn-primary px-3 py-2 rounded-2 bg-secondary" style="border:none;">
                   <a href="https://dexscreener.com/solana/3zm5bnjvk5xpj2ckdqajq1hbqslwz6f3jzsmn5yzek1c">
-                    <img src="files/icon/dex-screener.svg" alt="Dexscreener" style="width: 40px; height: 40px;">
+                    <img src="files/icon/dex-screener.svg" alt="Dexscreener" style="width: 40px; height: 40px; object-fit: contain;">
                   </a>
                   </button>
                </div>
             <div>
-              <button class="btn-primary px-3 py-2 bg-secondary">
+              <button class="btn-primary px-3 py-2 bg-secondary" style="border:none;">
               <a href="https://www.dextools.io/">
-                <img src="files/icon/dex-screener.svg" alt="dextools" style="width: 40px; height: 40px;">
+                <img src="files/icon/dextools.svg" alt="dextools" style="width: 40px; height: 40px; object-fit: contain;">
               </a>
               </button>
             </div>
                 <div>
                   <a href="https://solscan.io/">
-                  <button class="btn-primary px-3 py-2 bg-secondary">
-                    <img src="files/icon/dex-screener.svg" alt="solscan" style="width: 40px; height: 40px;">
+                  <button class="btn-primary px-3 py-2 bg-secondary" style="border:none;">
+                    <img src="files/icon/solscan.jpeg" alt="solscan" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
                   </button>
                 </a>
                 </div>
@@ -142,10 +151,10 @@
         <!-- Second Column: Nested rows for heading & paragraph -->
         <div class="p-2 col-12 col-md-6">
         <div class="d-flex flex-column">
-            <h2 style="color: var(--preset--color--warning);" class="heading-responsive">A super duper Panda</h2>
+            <h2 style="color: var(--preset--color--warning);" class="heading-responsive">The Supreme Panda</h2>
             <p style="color: var(--preset--color--warning);" class="text-responsive">
-            driven cryptocurrency inspired by the charmand resilience of the giant panda. Just like pandas thrive in harmony with nature,
-            XIAO aims to create a balanced ecosystem for crypto enthusiasts, combining playful innovation with real-world impact.
+            XIAO is a community-driven cryptocurrency inspired by the charm and resilience of the giant panda. Just like pandas thrive in harmony with nature,
+            XIAO aims to create a balanced ecosystem for crypto enthusiasts, combining playful innovation with a strong, diamond-handed community.
             </p>
         </div>
         </div>
@@ -192,7 +201,7 @@
                         <tr>
                           <td style="border: none;"></td>
                           <td style="border: none; ">                   
-                             <p class="m-0"> You can use Sollet.io, Phantom, or any other Solana wallet. </p>
+                             <p class="m-0"> You can use Phantom, Solflare, or any other Solana wallet. </p>
                           </td>
 
                         </tr>
@@ -248,7 +257,7 @@
                       <tr>
                         <td style="border: none;"></td>
                         <td style="border: none; ">                   
-                           <p class="m-0"> Deposit SOL then use Raydium or Serum, connect Phantom WalLet. </p>
+                           <p class="m-0"> Deposit SOL, then open Raydium or Jupiter and connect your Phantom Wallet. </p>
                         </td>
   
                       </tr>
@@ -261,12 +270,12 @@
                   
                  </div>
 
-                 <div class="d-flex flex-row flex-wrap gap-2 py-3 align-content-stretch">
-                  <div class="copy-wallet col-12 col-md-8 rounded-pill text-center" style="border: 1px solid #2e1212; background-color: rgba(240,248,255, 0.4);">
-                    <p>9jZgvgS2bWtQiYzv48GcWzY4tnkeRSANbTm8Kp1LmSyS</p>
+                 <div class="d-flex flex-row flex-wrap gap-2 py-3 align-items-center">
+                  <div class="copy-wallet col-12 col-md-8 rounded-pill text-center d-flex align-items-center justify-content-center" style="border: 1px solid #2e1212; background-color: rgba(240,248,255, 0.4); padding: 10px; overflow: hidden;">
+                    <p style="margin: 0; word-break: break-all; font-family: monospace; font-size: 0.95rem;">9jZgvgS2bWtQiYzv48GcWzY4tnkeRSANbTm8Kp1LmSyS</p>
                   </div>
                   <div class="col-12 col-md-3">
-                    <button class= "btn-primary w-100" id="copy-btn">Copy</button>
+                    <button class= "btn-primary w-100" id="copy-btn" style="height: 100%; min-height: 48px;">Copy</button>
                   </div>
                 </div>
                 
@@ -295,7 +304,7 @@
             <!-- row 1 (description) -->
             <div class="p-4 bg-white mb-3 box-shadow rounded-2">
               <h3 style="color: #FD9778;">Tokenomics</h3>
-              <p style="color: #FD9778;">69 billion meme will be minted in total. They will be distributed into 7 main pools, each with different unlocking schedules.</p>
+              <p style="color: #FD9778;">1 Billion $XIAO will be minted in total. They will be distributed into 7 main pools, ensuring a healthy and thriving ecosystem.</p>
               <p class="mb-1" style="font-size: 0.8rem; font-weight: bold; font-style:italic">Total Supply </p>
                 <!-- PROGRESS BAR -->
                 <div class="container p-0 m-0">
@@ -428,28 +437,28 @@
  <section class="bg-gradient p-0 m-0" id="counter">
   <!-- COUNTER CONTAINER -->
   <div class="counter-container p-div" style="padding-bottom: 8%;">
-    <!-- Counter 1: animate from 0 to 1, suffix "B+" -->
+    <!-- Counter 1: animate from 0 to 1, suffix "B" -->
     <div class="counter-item">
-      <div class="counter-number" data-target="10" data-suffix="B+">0</div>
+      <div class="counter-number" data-target="1" data-suffix="B">0</div>
       <div class="counter-label">Total Supply</div>
     </div>
     
-    <!-- Counter 2: animate from 0 to 0, suffix "%" -->
+    <!-- Counter 2: 0% tax -->
     <div class="counter-item">
-      <div class="counter-number" data-target="100" data-suffix="%">0</div>
+      <div class="counter-number" data-target="0" data-suffix="%">0</div>
       <div class="counter-label">Buy Tax</div>
     </div>
     
-    <!-- Counter 3: animate from 0 to 0, suffix "%" -->
+    <!-- Counter 3: 0% tax -->
     <div class="counter-item">
-      <div class="counter-number" data-target="1000" data-suffix="%">0</div>
-      <div class="counter-label">Tax</div>
+      <div class="counter-number" data-target="0" data-suffix="%">0</div>
+      <div class="counter-label">Sell Tax</div>
     </div>
     
-    <!-- Counter 4: animate from 0 to 2, suffix "%" -->
+    <!-- Counter 4: 100% liquidity -->
     <div class="counter-item">
-      <div class="counter-number" data-target="98" data-suffix="%">0</div>
-      <div class="counter-label">Buy Back</div>
+      <div class="counter-number" data-target="100" data-suffix="%">0</div>
+      <div class="counter-label">Liquidity Locked</div>
     </div>
   </div>
   </section>
@@ -467,19 +476,19 @@
     <div class="d-flex flex-wrap flex-column flex-sm-row align-items-start align-content-start">
       <!-- Gallery Item 1 -->
       <div class="col-12 col-sm-4 p-3 gallery-item hover-scale">
-        <img src="files/music photo/aimoraimo-yorushika.jpg" 
+        <img src="Images/aimoraimo-yorushika.jpg" 
              alt="Gallery 1" 
              class="img-fluid rounded-4 w-100">
       </div>
       <!-- Gallery Item 2 -->
       <div class="col-12 col-sm-4 p-3 gallery-item hover-scale">
-        <img src="files/music photo/haru-yorushika.png" 
+        <img src="Images/haru-yorushika.png" 
              alt="Gallery 2" 
              class="img-fluid rounded-4 w-100">
       </div>
       <!-- Gallery Item 3 -->
       <div class="col-12 col-sm-4 p-3 gallery-item hover-scale">
-        <img src="files/music photo/hana ni bourei-yorushika.jpg" 
+        <img src="Images/hana ni bourei-yorushika.jpg" 
              alt="Gallery 3" 
              class="img-fluid rounded-4 w-100">
       </div>
@@ -618,12 +627,12 @@
 <div class="container-music">
   <div class="music-player">
 
-      <img src="/Images/aimoraimo-yorushika.jpg" class="song-img" id="songImg">
+      <img src="Images/aimoraimo-yorushika.jpg" class="song-img" id="songImg">
       <h6> </h6>
 
       <audio id="song">
-          <source src="/Audio/tuki.『アイモライモ』Official Music Video.mp3" type="audio/mpeg">
-          <source src="/Audio/tuki.『シーソー』Official Music Video.mp3" type="audio/mpeg">
+          <source src="Audio/tuki.『アイモライモ』Official Music Video.mp3" type="audio/mpeg">
+          <source src="Audio/tuki.『シーソー』Official Music Video.mp3" type="audio/mpeg">
       </audio>
       <input type="range" value="0" id="progress">
 
@@ -633,7 +642,7 @@
           <div onclick="playNext()"><i class="fa-solid fa-forward"></i></div>
       </div>
 
-      <img src="/Images/XIAO PFP 1.png" class="main-img">
+      <img src="files/XIAO PFP 1.png" class="main-img">
   </div>
 </div>
 </div>
